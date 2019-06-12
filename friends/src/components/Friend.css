@@ -7,3 +7,27 @@
   min-width: 350px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+.friend-form {
+  background-color: #eeeeee;
+  padding: 1em;
+  margin: 1.5em auto;
+  max-width: 500px;
+  min-width: 300px;
+  width: 45%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.friend-form div {
+  margin: 1em auto;
+  display: flex;
+}
+
+.friend-form label {
+  margin-right: 1em;
+  width: 10%;
+}
+
+.friend-form input {
+  flex: 1;
+}
