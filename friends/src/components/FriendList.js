@@ -15,10 +15,15 @@ const FriendList = () => {
       });
   }, []);
 
+  const deleteFriend = (id) => {
+    axios.delete(`http://localhost:5000/friends/${id}`);
+    setFriends(friends.filter(e => e.id !== id));
+  };
+
   return (
     <>
       {friends.map(e => (
-        <Friend {...e} key={e.id} />
+        <Friend {...e} key={e.id} deleteFriend={deleteFriend} />
       ))}
     </>
   )
