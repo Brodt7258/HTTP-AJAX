@@ -3,18 +3,22 @@ import axios from 'axios';
 
 import './Friend.css';
 
-const FriendForm = () => {
+const FriendForm = ({ name, age, email, id }) => {
 
   const [newFriend, setNewFriend] = useState({
-    name: '',
-    age: '',
-    email: ''
+    name,
+    age,
+    email
   });
 
   const submitForm = (e) => {
     e.preventDefault();
     console.log(newFriend);
-    axios.post('http://localhost:5000/friends', newFriend);
+    if (id) {
+      axios.put(`http://localhost:5000/friends/${id}`, newFriend);
+    } else {
+      axios.post('http://localhost:5000/friends', newFriend);
+    }
   };
 
   return (
